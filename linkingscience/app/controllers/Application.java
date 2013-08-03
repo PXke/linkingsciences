@@ -54,5 +54,9 @@ public class Application extends Controller {
 	  public static Result team(){
     	return ok(team.render());
     }
+	
+	  public static Result project(){
+    	return ok(project.render());
+    }
   
 }

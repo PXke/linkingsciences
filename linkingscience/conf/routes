@@ -22,6 +22,10 @@ GET 	/createproject/				controllers.Application.createProject()
 
 GET 	/team/				controllers.Application.team()
 
+# Create Project page
+
+GET 	/project/				controllers.Application.project()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
