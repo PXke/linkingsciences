@@ -1,11 +1,9 @@
-use linkingsciences
-
 -- phpMyAdmin SQL Dump
 -- version 3.5.8
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-08-2013 a las 18:01:36
+-- Tiempo de generación: 03-08-2013 a las 19:48:09
 -- Versión del servidor: 5.5.29
 -- Versión de PHP: 5.4.10
 
@@ -51,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `uid` char(32) COLLATE utf8_bin NOT NULL,
   `project_tag` char(10) COLLATE utf8_bin NOT NULL,
   `project_name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `project_quick_description` varchar(255) COLLATE utf8_bin NOT NULL,
   `date_created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
