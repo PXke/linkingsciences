@@ -18,5 +18,10 @@ public class Application extends Controller {
     public static Result signIn() {
         return ok(signIn.render());
     }
+
+    public static Result about(){
+    	return ok(about.render());
+    }
+    
   
 }
