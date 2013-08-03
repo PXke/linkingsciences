@@ -18,7 +18,11 @@ GET     /sign-in/                           controllers.Application.signIn()
 
 GET 	/createproject/				controllers.Application.createProject()
 
-# Create Project page
+# Registering page
+
+GET 	/register/				controllers.Application.register()
+POST    /register/          controllers.Application.sayHello()
+# Create Team page
 
 GET 	/team/				controllers.Application.team()
 

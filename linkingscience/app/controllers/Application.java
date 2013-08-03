@@ -6,10 +6,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.sql.DataSource;
-
+import static play.data.Form.*;
 import play.*;
 import play.mvc.*;
 import play.db.*;
+import play.data.*;
 
 import views.html.*;
 
@@ -21,18 +22,39 @@ public class Application extends Controller {
 	
     public static Result index() {
     	ResultSet rs=null;
+    	String Nbuser ="APOCALYPSE";
+    	String Nbproject ="APOCALYPSE";
     	try {
     		Statement stmt = ds.createStatement() ;
     		String query = "SELECT COUNT(*) FROM users;" ;
     		rs = stmt.executeQuery(query) ;
     		rs.next();
-    		return ok(index.render(rs.getString(1),"0"));
+    		Nbuser = rs.getString(1);
+    		query = "SELECT COUNT(*) FROM projects;" ;
+    		rs = stmt.executeQuery(query) ;
+    		rs.next();
+    		Nbproject = rs.getString(1);
+    		return ok(index.render(Nbuser,Nbproject));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     	
     	return ok(index.render("9999","9999"));
+    }
+    
+    public static Result sayHello() {
+    	DynamicForm requestData = Form.form().bindFromRequest();
+    	//
+        String name = requestData.get("password");
+        System.out.println(requestData.toString());
+		return ok(index.render(name,"9999"));
+         
+         // do what you want with the name variable
+    }
+    
+    public static Result register(){
+    	 return ok(register.render());
     }
     
     public static Result user() {
