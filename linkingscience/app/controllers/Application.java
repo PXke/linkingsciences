@@ -1,14 +1,38 @@
 package controllers;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.sql.DataSource;
+
 import play.*;
 import play.mvc.*;
+import play.db.*;
 
 import views.html.*;
 
+
+
 public class Application extends Controller {
   
+	private static Connection ds = DB.getConnection();
+	
     public static Result index() {
-        return ok(index.render());
+    	ResultSet rs=null;
+    	try {
+    		Statement stmt = ds.createStatement() ;
+    		String query = "SELECT COUNT(*) FROM users;" ;
+    		rs = stmt.executeQuery(query) ;
+    		rs.next();
+    		return ok(index.render(rs.getString(1),"0"));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	return ok(index.render("9999","9999"));
     }
     
     public static Result user() {

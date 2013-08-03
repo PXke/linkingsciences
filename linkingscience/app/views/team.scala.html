@@ -13,6 +13,22 @@
     max-width: 200px;
     object-fit: cover;
   }
+  .circular {
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .7);
+    float: left;
+    margin-top:18px;
+    margin-right:11px;
+  }
+
 </style>
 
 <html>
@@ -33,9 +49,9 @@
     <div class="navbar navbar-inverse">
     <a class="navbar-brand" href="/">Linking Science</a>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="../">Home</a></li>
+      <li><a href="../">Home</a></li>
       <li><a href="../about/">About</a></li>
-      <li><a href="../team/">The Team</a></li>
+      <li class="active"><a href="../team/">The Team</a></li>
     </ul>
     <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
    </div>
@@ -52,8 +68,7 @@
 		
 		
          <div class="col-lg-6">
-            <h2>Name 1</h2>
-			<div class="holder"><img src="@routes.Assets.at("images/Globe.jpg")" class="img-rounded"></div>
+            <div class="circular" style="background-image: url('@routes.Assets.at("images/team1.jpg")')"></div><h2>Name 1</h2>
 			<p></p>
 			<p><strong>Main interests</strong>: write something!</p>
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
@@ -62,9 +77,8 @@
 		
 		  
           <div class="col-lg-6">
-            <h2>Adrian Santamaria</h2>
+            <div class="circular" style="background-image: url('@routes.Assets.at("images/team2.jpg")')"></div><h2>Adrian Santamaria</h2>
 	
-			<div class="holder"><img src="@routes.Assets.at("images/Globe.jpg")" class="img-rounded"></div>
             <p></p>
 			<p><strong>Main interests</strong>: coding</p>           
 			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
@@ -75,9 +89,8 @@
 		 <div class="row">
 		 
           <div class="col-lg-6">
-            <h2>Name 3</h2>
+            <div class="circular" style="background-image: url('@routes.Assets.at("images/team3.jpg")')"></div><h2>Name 3</h2>
 			
-			<div class="holder"><img src="@routes.Assets.at("images/Globe.jpg")" class="img-rounded"></div>
 			<p></p>
 			<p><strong>Main interests</strong>: write something!</p>
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
@@ -85,9 +98,8 @@
           </div>
 		  
 		<div class="col-lg-6">
-            <h2>Tomas Hubinek</h2>
+            <div class="circular" style="background-image: url('@routes.Assets.at("images/team4.jpg")')"></div><h2>Tomas Hubinek</h2>
 			
-			<div class="holder"><img src="@routes.Assets.at("images/me.jpg")" class="img-rounded"></div>
 			<p></p>
 			<p><strong>Main interests</strong>: coding</p>
 			
