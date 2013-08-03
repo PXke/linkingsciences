@@ -1,8 +1,10 @@
+@(username: String, experience: Int, email: String)
+
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>quentinms</title>
+        <title>@username</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
@@ -26,8 +28,8 @@
 	   
 	   <div class="row">
 	   <div class="col-lg-8">
-	   <h1>Hello, Quentin Mazars-Simon!</h1>
-	   <i class="icon-facebook icon-large"></i> <i class="icon-twitter icon-large"></i> <i class="icon-google-plus icon-large"></i> <i class="icon-github icon-large"></i>&nbsp;&nbsp;&nbsp;<i class="icon-compass icon-large">Lausanne, Switzerland</i>
+	   <h1>Hello, @username!</h1>
+	   <a href="mailto:@email"><i class="icon-envelope icon-large"></i></a> <i class="icon-facebook icon-large"></i> <i class="icon-twitter icon-large"></i> <i class="icon-google-plus icon-large"></i> <i class="icon-github icon-large"></i>&nbsp;&nbsp;&nbsp;<i class="icon-compass icon-large">Lausanne, Switzerland</i>
 	   <h3>Projects you are involved in</h3>
 	   <div class="panel">
 	   <div class="panel-heading">
@@ -53,7 +55,7 @@
 	   </div>
 	   </div>
 	   <div class="col-lg-4"> <div class="container pull-right">
-	   <h3>You are level 5</h3>
+	   <h3>You are level @experience</h3>
 	   <div class="progress">
 	   <div class="progress-bar progress-bar-success" style="width: 40%"></div>
 	   </div>

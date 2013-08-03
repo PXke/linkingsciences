@@ -58,7 +58,7 @@ public class Application extends Controller {
     }
     
     public static Result user() {
-        return ok(user.render());
+        return ok(user.render("quentinms", 5, "qms@kth.se"));
     }
     
     public static Result signIn() {
@@ -70,11 +70,23 @@ public class Application extends Controller {
     }
     
     public static Result createProject(){
-    	return ok(createproject.render());
+    	return ok(createProject.render());
+    }
+    
+    public static Result submitProject(){
+    	return ok(createProject.render());
     }
 	
 	  public static Result team(){
     	return ok(team.render());
+    }
+	
+	  public static Result project(){
+    	return ok(project.render());
+    }
+
+      public static Result testspage(){
+        return ok(testspage.render());
     }
   
 }
