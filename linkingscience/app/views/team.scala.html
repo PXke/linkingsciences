@@ -1,0 +1,173 @@
+@(title: String)(content: Html)
+
+
+<!DOCTYPE html>
+
+
+<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 80px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }
+
+
+      /* Customize the navbar links to be fill the entire space of the .navbar */
+      .navbar .navbar-inner {
+        padding: 0;
+      }
+      .navbar .nav {
+        margin: 0;
+        display: table;
+        width: 100%;
+      }
+      .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+      }
+      .navbar .nav li a {
+        font-weight: bold;
+        text-align: center;
+        border-left: 1px solid rgba(255,255,255,.75);
+        border-right: 1px solid rgba(0,0,0,.1);
+      }
+      .navbar .nav li:first-child a {
+        border-left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .navbar .nav li:last-child a {
+        border-right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+	  
+	        .holder {
+                display: inline;
+            }
+
+            .holder img {
+                max-height: 200px;
+                max-width: 200px;
+                object-fit: cover;
+            }
+    </style>
+
+<html>
+    <head>
+	   <meta charset="utf-8">
+        <title>Team</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+    </head>
+	
+    <body>
+
+    <div class="container">
+    
+  
+      <div class="body-content">
+        <h1>About team</h1>
+		<p>We have met on WebFest 2013 in Cern and developed together basis of this website in two days. So who are we?</p>
+        <!-- Example row of columns -->
+		
+        <hr>
+		
+		<div class="row">
+		
+		
+         <div class="col-lg-6">
+            <h2>Name 1</h2>
+			<div class="holder"><img src="@routes.Assets.at("images/Globe.jpg")" class="img-rounded"></div>
+			<p></p>
+			<p><strong>Main interests</strong>: write something!</p>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            
+         </div>
+		
+		  
+          <div class="col-lg-6">
+            <h2>Name 2</h2>
+	
+			<div class="holder"><img src="@routes.Assets.at("images/Globe.jpg")" class="img-rounded"></div>
+            <p></p>
+			<p><strong>Main interests</strong>: coding</p>           
+			<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+           
+         </div>
+		 </div>
+		 
+		 <div class="row">
+		 
+          <div class="col-lg-6">
+            <h2>Featured Project 3!</h2>
+			
+			<div class="holder"><img src="@routes.Assets.at("images/Globe.jpg")" class="img-rounded"></div>
+			<p></p>
+			<p><strong>Main interests</strong>: write something!</p>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+        
+          </div>
+		  
+		<div class="col-lg-6">
+            <h2>Tomas Hubinek</h2>
+			
+			<div class="holder"><img src="@routes.Assets.at("images/me.jpg")" class="img-rounded"></div>
+			<p></p>
+			<p><strong>Main interests</strong>: coding</p>
+			
+            <p>Some informations.</p>
+        
+        </div>
+		
+        </div>
+		
+		
+		</div>
+
+      </div><!-- /.body-content -->
+
+      <!-- Site footer -->
+      <div class="footer">
+        <p>&copy; Linking sciences 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

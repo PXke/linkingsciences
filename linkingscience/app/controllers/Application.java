@@ -26,5 +26,9 @@ public class Application extends Controller {
     public static Result createProject(){
     	return ok(createproject.render());
     }
+	
+	  public static Result team(){
+    	return ok(team.render());
+    }
   
 }
