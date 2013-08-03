@@ -62,5 +62,9 @@ public class Application extends Controller {
 	  public static Result project(){
     	return ok(project.render());
     }
+
+      public static Result testspage(){
+        return ok(project.render());
+    }
   
 }
