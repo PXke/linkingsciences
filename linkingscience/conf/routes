@@ -16,7 +16,8 @@ GET     /sign-in/                           controllers.Application.signIn()
 
 # Create Project page
 
-GET 	/createproject/				controllers.Application.createProject()
+GET 	/create-project/				controllers.Application.createProject()
+POST 	/create-project/				controllers.Application.submitProject()
 
 # Create Project page
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Create a project</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+
+    <div class="container">
+	 <div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="/">Linking Science</a>
+    <ul class="nav navbar-nav">
+      <li><a href="../">Home</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="#">The Team</a></li>
+    </ul>
+    <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
+   </div>
+
+
+      <div class="body-content">
+
+	  <form class="container" method="post" style="width:400px">
+	  <h1>Create a project</h1>
+	    <div class="form-group">
+	      <label for="projectName">Project name</label>
+	      <input type="text" class="form-control" id="projectName" placeholder="My awesome science project.">
+	    </div>
+	    <div class="form-group">
+	      <label for="projectSlug">Project short name</label>
+	      <input type="text" class="form-control" id="projectSlug" placeholder="science-project">
+	    </div>
+	    <div class="form-group">
+	      <label for="projectShortDescription">Project short description</label>
+	      <input type="text" class="form-control" id="projectShortDescription" placeholder="A short description of your awesome science project">
+	    </div>
+	    <div class="form-group">
+	      <label for="projectLongDescription">Project description</label>
+	      <textarea rows="7" class="form-control" id="projectLongDescription" placeholder="A long description of your awesome science project. You can include a lot of information here."></textarea>
+	    </div>
+	    <div class="pull-right"><button type="submit" class="btn btn-default">Submit</button> or <a>cancel</a> </div>
+	</form>
+    </div>
+
+  </body>
+</html>
