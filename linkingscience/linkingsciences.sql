@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-08-2013 a las 17:40:54
+-- Tiempo de generación: 03-08-2013 a las 18:01:36
 -- Versión del servidor: 5.5.29
 -- Versión de PHP: 5.4.10
 
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `pass` char(128) COLLATE utf8_bin NOT NULL,
   `register_date` datetime NOT NULL,
   `language` char(2) COLLATE utf8_bin NOT NULL,
-  `active` tinyint(1) NOT NULL,
+  `active` varchar(12) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid` (`uid`),
   KEY `email` (`email`)
