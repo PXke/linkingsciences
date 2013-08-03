@@ -23,5 +23,8 @@ public class Application extends Controller {
     	return ok(about.render());
     }
     
+    public static Result createProject(){
+    	return ok(createproject.render());
+    }
   
 }
