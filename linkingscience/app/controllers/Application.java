@@ -262,7 +262,7 @@ public class Application extends Controller {
 			stmt = ds.createStatement();
 	
 			String query = "INSERT INTO  projects (uid, project_name, project_tag, project_quick_description) VALUES ('"
-					+name+"','"+ projectURL + "','"+projectURL+"','"+sDescription+"');";
+					+projectURL+"','"+name+ "','"+projectURL+"','"+sDescription+"');";
 			stmt.executeUpdate(query);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -294,7 +294,8 @@ public class Application extends Controller {
 				
 				if(rs.next()){
 					String name = rs.getString("project_name");
-					return ok(project.render(isItConnected(), name, id, id)); 
+					String description = rs.getString("project_quick_description");
+					return ok(project.render(isItConnected(), name, description, description)); 
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
