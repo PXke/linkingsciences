@@ -16,8 +16,15 @@
 
     <style type="text/css">
     .jumbotron {
-      padding-top: 25px;
-      padding-bottom: 35px;
+      padding-top: 22px;
+      padding-bottom: 32px;
+    }
+    #search {
+      margin-top:2px;
+      margin-left: 10px;
+    }
+    input[type="text"]#search {
+      background-color: #F5F5F5;
     }
     </style>
 
@@ -29,7 +36,9 @@
       <li class="active"><a  href="../about/">About</a></li>
       <li><a href="../team/">The Team</a></li>
     </ul>
+
     @if(connected==""){
+
     <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
    }else{
      <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">@connected</a></p>
