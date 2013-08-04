@@ -325,8 +325,14 @@ public class Application extends Controller {
 
 				rs = stmt.executeQuery(query);
 
-				rs.next();
-				return rs.getString("username");
+				if(rs.next()){
+					return rs.getString("username");	
+				}
+				else
+				{
+					return "";
+				}
+				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 
