@@ -67,6 +67,47 @@ public class Application extends Controller {
         	 {
         		 return  ok(register.render("username too long"));
         	 }
+        	 try {
+        	 ResultSet rs=null;
+        	 Statement stmt;
+			
+				stmt = ds.createStatement();
+			
+				// TODO Auto-generated catch block
+			
+     		 String query = "SELECT COUNT(*) FROM users_profile WHERE username='"+name+"';" ;
+     		 rs = stmt.executeQuery(query) ;
+     		 rs.next();
+     		 
+     		 if(Integer.parseInt(rs.getString(1))>0)
+     		 {
+     			return ok(register.render("already used"));
+     		 }
+        	 } catch (SQLException e) {
+        		 e.printStackTrace();
+        	 }
+        	 name = requestData.get("email");
+        	 if((name.compareTo("")==0)||(name.compareTo("email")==0))
+        	 {
+        		 return ok(register.render("email missing"));
+        	 }
+        	 if(!((name.contains("@"))&&(name.contains("."))))
+        	 {
+        		 return ok(register.render("email incorrect"));
+        	 }
+        	 name = requestData.get("password");
+        	 String nameb = requestData.get("verifpassword");
+        	 
+        	 if(name.length()<7)
+        	 {
+        		 return ok(register.render("email incorrect must be 8 characters or more"));
+        	 }
+        	 
+        	 if(name!=nameb)
+        	 {
+        		 return ok(register.render("the two passwords don't match"));
+        	 }
+        	 
         	 return  ok(register.render("Tout est okay"));
         }
         else if(name.contains("formb"))
