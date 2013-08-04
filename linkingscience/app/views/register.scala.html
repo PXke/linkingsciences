@@ -12,6 +12,13 @@
   </head>
   <body>
 
+  <style type="text/css">
+    .input-group {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+  </style>
+
   <div class="container">
     
     <div class="navbar navbar-inverse">
@@ -24,14 +31,13 @@
       <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
     </div>
    
-  <div class="jumbotron">
      
     <div class="row">
 
       <div class="col-lg-6">
       	<div class="panel">
         	<form method="post" id="login">
-            
+
             <h2>Login</h2>
 
             <div class="input-group">
@@ -42,7 +48,7 @@
       				<span class="input-group-addon">Password</span>
       				<input type="password" class="form-control" placeholder="@Messages("password")" name="password" >
       			</div>
-      			<input type="submit" value="@Messages("Login")" />
+      			<input type="submit" class="btn btn-default navbar-btn" value="@Messages("Login")" />
 
         	</form>
         </div>
@@ -70,13 +76,12 @@
       				<span class="input-group-addon">Password</span>
       				<input type="password" class="form-control" placeholder="@Messages("repeat password")" name="verifpassword" >
         		</div>
-        		<input type="submit" value="@Messages("Register")" />
+        		<input type="submit" class="btn btn-default navbar-btn" value="@Messages("Register")" />
 
       		</form>
         </div>
       </div>
          
-    </div>
        
   </div>
 
