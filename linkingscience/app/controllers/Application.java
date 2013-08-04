@@ -21,7 +21,7 @@ import views.html.team;
 import views.html.testspage;
 import views.html.user;
 import utils.*;
-
+import utils.crypto;
 
 public class Application extends Controller {
   
@@ -54,12 +54,13 @@ public class Application extends Controller {
     	DynamicForm requestData = Form.form().bindFromRequest();
     	//
         String name = requestData.get("form");
-      
+        ResultSet rs=null;
+        Statement stmt;
         if(name.contains("forma"))
         {
-        	 System.out.println("bite");
+        	 
         	 name = requestData.get("username");
-        	 System.out.println("value: " + name);
+        	 
         	 
         	 if((name.compareTo("")==0)||(name.compareTo("username")==0))
         	 {
@@ -70,10 +71,10 @@ public class Application extends Controller {
         		 return  ok(register.render("username too long"));
         	 }
         	 try {
-        	 ResultSet rs=null;
-        	 Statement stmt;
+        	
+        
 			
-				stmt = ds.createStatement();
+        		 stmt = ds.createStatement();
 			
 				// TODO Auto-generated catch block
 			
@@ -122,7 +123,7 @@ public class Application extends Controller {
         	 SessionIdentifierGenerator MyUIDGene = new SessionIdentifierGenerator();
         	 String myUID = MyUIDGene.nextSessionId();
         	
-        	 query = "INSERT INTO users (uid,email,pass,register_date,language,active) VALUES ('"+  myUID + "','"+requestData.get("email") + "','"+ requestData.get("password")+ "', NOW(),'EN','1');" ;
+        	 query = "INSERT INTO users (uid,email,pass,register_date,language,active) VALUES ('"+  myUID + "','"+requestData.get("email") + "','"+ new utils.crypto().getMD5(requestData.get("password"))+ "', NOW(),'EN','1');" ;
         	 System.out.println(query);
         	 stmt.executeUpdate(query) ;
         	 System.out.println("yay");
@@ -138,7 +139,50 @@ public class Application extends Controller {
         }
         else if(name.contains("formb"))
         {
-        	return  ok(register.render("Tout est okay"));
+        	try {
+        	name = requestData.get("username");
+        	String password = new crypto().getMD5(requestData.get("password"));
+        	
+				stmt = ds.createStatement();
+			
+        	String query = "SELECT  * FROM users, users_profile WHERE users_profile.username='"+name+"' and users.pass='"+ password +"' and users.uid=users_profile.uid;" ;
+    		rs = stmt.executeQuery(query) ;
+    		if(rs.next())
+    		{
+    			
+    			session("uid",rs.getString("uid"));
+    			response().setCookie("uid", rs.getString("uid"));
+    	    	String Nbuser ="APOCALYPSE";
+    	    	String Nbproject ="APOCALYPSE";
+    	    	try {
+    	    		stmt = ds.createStatement() ;
+    	    		query = "SELECT COUNT(*) FROM users;" ;
+    	    		rs = stmt.executeQuery(query) ;
+    	    		rs.next();
+    	    		Nbuser = rs.getString(1);
+    	    		query = "SELECT COUNT(*) FROM projects;" ;
+    	    		rs = stmt.executeQuery(query) ;
+    	    		rs.next();
+    	    		Nbproject = rs.getString(1);
+    	    		return ok(index.render(Nbuser,Nbproject));
+    			} catch (SQLException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
+    		       		
+    		}
+    		else
+    		{
+    			return  ok(register.render("Connection failed"));
+    		       
+    		}
+    			
+    		
+        	} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	return  ok(register.render("Critical Error"));
         }
         else
         {
@@ -184,5 +228,16 @@ public class Application extends Controller {
       public static Result testspage(){
         return ok(testspage.render());
     }
+      
+      public static boolean isItConnected() {
+    	  String uid = session("uid");
+    	  if(uid != null) {
+    	    return true;
+    	  } else {
+    	    return false;
+    	  }
+    	}
+      
+     
   
 }

@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `users_profile` (
 --
 
 CREATE TABLE IF NOT EXISTS `users_profile_data` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `uid` char(32) COLLATE utf8_bin NOT NULL,
   `bio` varchar(255) COLLATE utf8_bin NULL,
   `skills` varchar(255) COLLATE utf8_bin NULL,
