@@ -312,6 +312,14 @@ public class Application extends Controller {
 	public static Result testspage() {
 		return ok(testspage.render());
 	}
+	
+	public static Result programmer() {
+		return ok(programmer.render());
+	}
+	
+	public static Result scientist() {
+		return ok(scientist.render());
+	}
 
 	public static String isItConnected() {
 		String uid = session("uid");

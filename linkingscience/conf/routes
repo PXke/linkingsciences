@@ -24,9 +24,16 @@ POST 	/create-project/				controllers.Application.submitProject()
 
 GET 	/register/				controllers.Application.register()
 POST    /register/          controllers.Application.sayHello()
-# Create Team page
 
+# Create Team page
 GET 	/team/				controllers.Application.team()
+
+# Create programmer page
+GET 	/programmer/				controllers.Application.programmer()
+
+# Create scientist page
+GET 	/scientist/				controllers.Application.scientist()
+
 
 # Create Project page
 
