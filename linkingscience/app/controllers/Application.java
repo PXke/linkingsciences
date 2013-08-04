@@ -122,7 +122,7 @@ public class Application extends Controller {
         	 SessionIdentifierGenerator MyUIDGene = new SessionIdentifierGenerator();
         	 String myUID = MyUIDGene.nextSessionId();
         	
-        	 query = "INSERT INTO users (uid,email,pass,register_date,language,active) VALUES ('"+  myUID + "','"+requestData.get("email") + "','"+ requestData.get("password")+ "', NOW(),'EN','1';" ;
+        	 query = "INSERT INTO users (uid,email,pass,register_date,language,active) VALUES ('"+  myUID + "','"+requestData.get("email") + "','"+ requestData.get("password")+ "', NOW(),'EN','1');" ;
         	 System.out.println(query);
         	 stmt.executeUpdate(query) ;
         	 System.out.println("yay");
