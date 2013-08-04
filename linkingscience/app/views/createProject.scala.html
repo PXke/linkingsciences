@@ -43,25 +43,25 @@
 
       <div class="body-content">
 
-	  <form class="container" method="post" style="width:400px">
+	  <form class="container" method="post" id="createProject" style="width:400px">
 	  <h1>Create a project</h1>
 	    <div class="form-group">
 	      <label for="projectName">Project name</label>
-	      <input type="text" class="form-control" id="projectName" placeholder="My awesome science project.">
+	      <input type="text" class="form-control" id="projectName" name="projectName" placeholder="My awesome science project's title.">
 	    </div>
 	    <div class="form-group">
-	      <label for="projectSlug">Project short name</label>
-	      <input type="text" class="form-control" id="projectSlug" placeholder="science-project">
+	      <label for="projectURL">project URL</label>
+	      <input type="text" class="form-control" id="projectURL" name="projectURL" placeholder="awesome-project">
 	    </div>
 	    <div class="form-group">
 	      <label for="projectShortDescription">Project short description</label>
-	      <input type="text" class="form-control" id="projectShortDescription" placeholder="A short description of your awesome science project">
+	      <input type="text" class="form-control" id="projectShortDescription" name="projectShortDescription" placeholder="A short description of your awesome science project">
 	    </div>
 	    <div class="form-group">
 	      <label for="projectLongDescription">Project description</label>
-	      <textarea rows="7" class="form-control" id="projectLongDescription" placeholder="A long description of your awesome science project. You can include a lot of information here."></textarea>
+	      <textarea rows="7" class="form-control" id="projectLongDescription" name="projectLongDescription" placeholder="A long description of your awesome science project. You can include a lot of information here."></textarea>
 	    </div>
-	    <div class="pull-right"><button type="submit" class="btn btn-default">Submit</button> or <a>cancel</a> </div>
+	    <div class="pull-right"><input type="submit" class="btn btn-default" value="Create project" /> or <a>cancel</a> </div>
 	</form>
     </div>
 
