@@ -235,7 +235,6 @@ public class Application extends Controller {
 		
 		
 		return redirect("/project/"+projectURL);
-		return ok(createProject.render(isItConnected()));
 	}
 
 	public static Result team() {
@@ -258,8 +257,8 @@ public class Application extends Controller {
 				rs = stmt.executeQuery(query);
 				
 				if(rs.next()){
-					name = rs.getString("project_name");
-					return ok(project.render(name, id, id)); 
+					String name = rs.getString("project_name");
+					return ok(project.render(isItConnected(), name, id, id)); 
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -271,11 +270,9 @@ public class Application extends Controller {
 	}
 	
 	public static Result project(String title, String description, String sDescription) {
-		return ok(project.render(title, description, sDescription));
-		
-	public static Result project() {
-		return ok(project.render(isItConnected()));
+		return ok(project.render(isItConnected(),title, description, sDescription));
 	}
+		
 
 	public static Result testspage() {
 		return ok(testspage.render());
@@ -305,5 +302,6 @@ public class Application extends Controller {
 			return "";
 		}
 	}
+	
 
 }
