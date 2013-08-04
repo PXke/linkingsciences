@@ -3,8 +3,8 @@ USE linkingsciences;
 -- version 3.5.8
 -- http://www.phpmyadmin.net
 --
--- Servidor: localhost
--- Tiempo de generación: 03-08-2013 a las 19:48:09
+-- Servidor: localhost:3306
+-- Tiempo de generación: 04-08-2013 a las 11:45:16
 -- Versión del servidor: 5.5.29
 -- Versión de PHP: 5.4.10
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `log_master` (
   `host` varchar(255) COLLATE utf8_bin NOT NULL,
   `user_agent` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -52,6 +52,20 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `project_name` varchar(255) COLLATE utf8_bin NOT NULL,
   `project_quick_description` varchar(255) COLLATE utf8_bin NOT NULL,
   `date_created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `projects_collaborators`
+--
+
+CREATE TABLE IF NOT EXISTS `projects_collaborators` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` char(32) COLLATE utf8_bin NOT NULL,
+  `project_tag` char(10) COLLATE utf8_bin NOT NULL,
+  `date_joined` datetime NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -111,14 +125,20 @@ CREATE TABLE IF NOT EXISTS `users_profile` (
 --
 
 CREATE TABLE IF NOT EXISTS `users_profile_data` (
-  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` char(32) COLLATE utf8_bin NOT NULL,
-  `bio` varchar(255) COLLATE utf8_bin NULL,
-  `skills` varchar(255) COLLATE utf8_bin NULL,
-  `working_at` varchar(255) COLLATE utf8_bin NULL,
-  `webpage` varchar(255) COLLATE utf8_bin NULL,
-  `experience` int(11) NULL,
-  `badges` varchar(128) COLLATE utf8_bin NULL
+  `bio` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `skills` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `working_at` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `webpage` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `experience` int(11) DEFAULT NULL,
+  `badges` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `location` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `facebook` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `twitter` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `googleplus` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  `github` varchar(128) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
