@@ -8,6 +8,7 @@ GET     /                           controllers.Application.index()
 # User's profile page
 GET     /user/                           controllers.Application.user()
 
+
 # About page
 GET		/about/						controllers.Application.about()		
 
