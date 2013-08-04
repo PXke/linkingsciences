@@ -1,10 +1,10 @@
-@(username: String, experience: Int, email: String)
+@(connected : String, experience: Int, email: String)
 
 <!DOCTYPE html>
 
 <html>
     <head>
-        <title>@username</title>
+        <title>@connected</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
@@ -15,20 +15,24 @@
     <body>
 
     <div class="container">
-	 <div class="navbar navbar-inverse">
-	    <a class="navbar-brand" href="/">Linking Sciences</a>
-	    <ul class="nav navbar-nav">
-	      <li><a href="../">Home</a></li>
-	      <li><a href="../about/">About</a></li>
-	      <li><a href="#">The Team</a></li>
-	      </ul>
-	      <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">quentinms</a></p>
-	   </div>
+	  <div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="/">Linking Sciences</a>
+    <ul class="nav navbar-nav">
+      <li><a href="../">Home</a></li>
+      <li class="active"><a  href="../about/">About</a></li>
+      <li><a href="../team/">The Team</a></li>
+    </ul>
+    @if(connected==""){
+    <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
+   }else{
+     <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">@connected</a></p>
+   }
+   </div>
 	   
 	   
 	   <div class="row">
 	   <div class="col-lg-8">
-	   <h1>Hello, @username!</h1>
+	   <h1>Hello, @connected!</h1>
 	   <a href="mailto:@email"><i class="icon-envelope icon-large"></i></a> <i class="icon-facebook icon-large"></i> <i class="icon-twitter icon-large"></i> <i class="icon-google-plus icon-large"></i> <i class="icon-github icon-large"></i>&nbsp;&nbsp;&nbsp;<i class="icon-compass icon-large">Lausanne, Switzerland</i>
 	   <h3>Projects you are involved in</h3>
 	   <div class="panel">
