@@ -14,6 +14,16 @@
     </head>
     <body>
 
+    <style type="text/css">
+    #search {
+      margin-top:2px;
+      margin-left: 10px;
+    }
+    input[type="text"]#search {
+      background-color: #F5F5F5;
+    }
+    </style>
+
     <div class="container">
 	 <div class="navbar navbar-inverse">
 	    <a class="navbar-brand" href="/">Linking Sciences</a>
@@ -22,7 +32,10 @@
 	      <li><a href="../about/">About</a></li>
 	      <li><a href="#">The Team</a></li>
 	      </ul>
-	      <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">quentinms</a></p>
+	      <form class="navbar-form pull-left" action="">
+		      <input type="text" id="search" class="form-control col-lg-8 input-small" placeholder="Search for projects">
+		    </form>
+				<p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">quentinms</a></p>
 	   </div>
 	   
 	   

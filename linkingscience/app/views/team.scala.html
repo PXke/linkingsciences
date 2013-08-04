@@ -28,7 +28,13 @@
     margin-top:18px;
     margin-right:11px;
   }
-
+  #search {
+    margin-top:2px;
+    margin-left: 10px;
+  }
+  input[type="text"]#search {
+    background-color: #F5F5F5;
+  }
 </style>
 
 <html>
@@ -53,6 +59,9 @@
       <li><a href="../about/">About</a></li>
       <li class="active"><a href="../team/">The Team</a></li>
     </ul>
+    <form class="navbar-form pull-left" action="">
+      <input type="text" id="search" class="form-control col-lg-8 input-small" placeholder="Search for projects">
+    </form>
     <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
    </div>
     
