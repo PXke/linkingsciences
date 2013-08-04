@@ -5,15 +5,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.sql.DataSource;
-import static play.data.Form.*;
-import play.*;
-import play.mvc.*;
-import play.db.*;
-import play.data.*;
-
-import views.html.*;
-
+import play.data.DynamicForm;
+import play.data.Form;
+import play.db.DB;
+import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.about;
+import views.html.createProject;
+import views.html.index;
+import views.html.project;
+import views.html.register;
+import views.html.signIn;
+import views.html.team;
+import views.html.testspage;
+import views.html.user;
 
 
 public class Application extends Controller {
@@ -46,15 +51,39 @@ public class Application extends Controller {
     public static Result sayHello() {
     	DynamicForm requestData = Form.form().bindFromRequest();
     	//
-        String name = requestData.get("password");
-        System.out.println(requestData.toString());
-		return ok(index.render(name,"9999"));
+        String name = requestData.get("form");
+      
+        if(name.contains("forma"))
+        {
+        	 System.out.println("bite");
+        	 name = requestData.get("username");
+        	 System.out.println("value: " + name);
+        	 
+        	 if((name.compareTo("")==0)||(name.compareTo("username")==0))
+        	 {
+        		 return ok(register.render("username missing"));
+        	 }
+        	 else if(name.length()>31)
+        	 {
+        		 return  ok(register.render("username too long"));
+        	 }
+        	 return  ok(register.render("Tout est okay"));
+        }
+        else if(name.contains("formb"))
+        {
+        	return  ok(register.render("Tout est okay"));
+        }
+        else
+        {
+        	return ok(register.render("An Error Occured"));
+        }
+     
          
          // do what you want with the name variable
     }
     
     public static Result register(){
-    	 return ok(register.render());
+    	 return ok(register.render(""));
     }
     
     public static Result user() {

@@ -1,3 +1,6 @@
+@(errormessage: String)
+
+
 <!DOCTYPE html>
 
 <html>
@@ -33,7 +36,7 @@
           	<form method="post" id="login">
             <h2>Login</h2>
           
-  
+   			<input type="hidden" class="form-control" value="formb" placeholder="@Messages("form")" name="form" >
             <div class="input-group">
   				<span class="input-group-addon">@@</span>
   				<input type="text" class="form-control" placeholder="@Messages("username")" name="username" >
@@ -51,7 +54,7 @@
            	<div class="panel">
           	<form method="post" id="register">
             <h2>Register</h2>
-          
+            <input type="hidden" class="form-control" value="forma" placeholder="@Messages("form")" name="form" >
   			 <div class="input-group">
   				<span class="input-group-addon">username</span>
   				<input type="text" class="form-control" value="" placeholder="@Messages("username")" name="username" >
@@ -75,7 +78,9 @@
           </div>
      
    </div>
-   
+   @if(errormessage!=""){
+   	<div class="alert alert-danger">@errormessage</div>
+   }
  </div>
 
   </body>
