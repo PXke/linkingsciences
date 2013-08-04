@@ -271,7 +271,8 @@ public class Application extends Controller {
 	
 	public static Result project(String title, String description, String sDescription) {
 		return ok(project.render(isItConnected(),title, description, sDescription));
-	}
+    }
+		
 		
 
 	public static Result testspage() {
