@@ -210,15 +210,66 @@ public class Application extends Controller {
 	}
 
 	public static Result submitProject() {
-		return ok(createProject.render());
+		DynamicForm requestData = Form.form().bindFromRequest();
+		String name = requestData.get("projectName");
+		String sDescription = requestData.get("projectShortDescription");
+		String description = requestData.get("projectLongDescription");
+		String projectURL = requestData.get("projectURL");
+		System.out.println(requestData.data());
+		
+		ResultSet rs = null;
+		Statement stmt;
+		
+		
+		try {
+			stmt = ds.createStatement();
+	
+			String query = "INSERT INTO  projects (uid, project_name, project_tag, project_quick_description) VALUES ('"
+					+name+"','"+ projectURL + "','"+projectURL+"','"+sDescription+"');";
+			stmt.executeUpdate(query);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return redirect("/project/"+projectURL);
 	}
 
 	public static Result team() {
 		return ok(team.render());
 	}
 
-	public static Result project() {
-		return ok(project.render());
+	public static Result project(String id) {
+		if(id == ""){
+			return redirect("/create-project/");
+		} else {
+			
+			ResultSet rs = null;
+			Statement stmt;
+			
+			try {
+				stmt = ds.createStatement();
+		
+				String query = "SELECT  * FROM projects WHERE projects.project_tag='"
+						+ id+"';";
+				rs = stmt.executeQuery(query);
+				
+				if(rs.next()){
+					name = rs.getString("project_name");
+					return ok(project.render(name, id, id)); 
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return redirect("/create-project/"); 
+		}
+	}
+	
+	public static Result project(String title, String description, String sDescription) {
+		return ok(project.render(title, description, sDescription));
 	}
 
 	public static Result testspage() {

@@ -1,3 +1,5 @@
+@(projectTitle: String, projectDescription: String, projectSDescription: String)
+
 <!DOCTYPE html>
 
 <html>
@@ -18,7 +20,7 @@
        <a class="navbar-brand" href="/">Linking Sciences</a>
        <ul class="nav navbar-nav">
         <li><a href="../">Home</a></li>
-        <li class="active"><a  href="../about/">About</a></li>
+        <li><a  href="../about/">About</a></li>
         <li><a href="#">The Team</a></li>
        </ul>
       <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
@@ -28,7 +30,7 @@
 	  <div class="body-content">
 	  
 	   <div class="page-header">
-	    	<center><h1 text-align: center>Improve your life</h1></center>
+	    	<center><h1 text-align: center>@projectTitle</h1></center>
 	    	<center><p text-align: center>Tomas Green</p></center>
 	   </div>
 	  
@@ -38,7 +40,7 @@
 	       <dl class="dl-horizontal">	    
               <dt>  Key points:</dt> <dd>medicine, alimentation</dd>  </dt>     
 	          <dt>  Who we need:</dt> <dd> programmer, web-developer</dd> 
-	          <dt>  Main goals:</dt> <dd>provide interface for sharing experiences about alimentation</dd>
+	          <dt>  Main goals:</dt> <dd>@projectSDescription</dd>
 		   </dl>
 		 </div>
 		 
@@ -48,21 +50,11 @@
 		 
 		 <div class="col-lg-12">
 		   <dl class="dl-horizontal">
-		         <dt> Project description:</dt> <dd> In 1962 David Gale (who died in 2008) and Mr Shapley, now 89, published 
-		 a playful paper called “College Admissions and the Stability of Marriage”. They noted the similarity between college admissions,
-		 in which students and universities are trying to pair up to their mutual satisfaction, and the marriage market, in which a fixed number 
-		 of men and women are trying to find a match. In romantic comedies, each man and woman marries their own true love. In real life, some people settle for 
-		 second-best, which can lead to lots of trouble. If John and Mary love each other but are married to other people, they will be tempted to leave their current partner 
-		 and marry each other. 
-		 But if John loves Mary, while Mary loves her husband more than John, both will stay put.</dd> 
-		 <p></p>
-		 
-		        <dt>Additional materials:</dt> <dd> <iframe width="420" height="345"
-                 src="http://www.youtube.com/embed/XGSy3_Czz8k"></iframe> </dd>
-		 
+		   	@projectDescription
 		   </dl>
 		 </div>
   
+		 <!--
         <div class="col-lg-2">
 	          <h4>Rate project:</h4>
         </div>
@@ -75,12 +67,13 @@
 			<button type="button" class="btn btn-default">Very good</button>
 			<button type="button" class="btn btn-default">Excellent</button>
 			</div>
-		 </div>
+		 </div> -->
 		 
 	  </div>
  
 	 <hr>
 	   
+	 <!--
 	   <h4>Contact:</h4>
 	   
 		<address>
@@ -89,7 +82,7 @@
 				 San Francisco, CA 94107<br>
 				 <abbr title="Phone">P:</abbr> (123) 456-7890
 		 </address>
-
+				 -->
 	</div> <!-- /container -->
 
   </body>
