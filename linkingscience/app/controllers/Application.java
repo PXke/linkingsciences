@@ -20,6 +20,8 @@ import views.html.signIn;
 import views.html.team;
 import views.html.testspage;
 import views.html.user;
+import views.html.programmer;
+import views.html.scientist;
 import utils.*;
 import utils.crypto;
 
