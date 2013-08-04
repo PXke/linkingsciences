@@ -1,3 +1,4 @@
+USE linkingsciences;
 -- phpMyAdmin SQL Dump
 -- version 3.5.8
 -- http://www.phpmyadmin.net
@@ -110,14 +111,14 @@ CREATE TABLE IF NOT EXISTS `users_profile` (
 --
 
 CREATE TABLE IF NOT EXISTS `users_profile_data` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` char(32) COLLATE utf8_bin NOT NULL,
-  `bio` varchar(255) COLLATE utf8_bin NOT NULL,
-  `skills` varchar(255) COLLATE utf8_bin NOT NULL,
-  `working_at` varchar(255) COLLATE utf8_bin NOT NULL,
-  `webpage` varchar(255) COLLATE utf8_bin NOT NULL,
-  `experience` int(11) NOT NULL,
-  `badges` varchar(128) COLLATE utf8_bin NOT NULL
+  `bio` varchar(255) COLLATE utf8_bin NULL,
+  `skills` varchar(255) COLLATE utf8_bin NULL,
+  `working_at` varchar(255) COLLATE utf8_bin NULL,
+  `webpage` varchar(255) COLLATE utf8_bin NULL,
+  `experience` int(11) NULL,
+  `badges` varchar(128) COLLATE utf8_bin NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
