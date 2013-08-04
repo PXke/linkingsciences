@@ -1,4 +1,4 @@
-@(projectTitle: String, projectDescription: String, projectSDescription: String)
+@(connected : String, projectTitle: String, projectDescription: String, projectSDescription: String)
 
 <!DOCTYPE html>
 
@@ -14,9 +14,20 @@
 	
     <body>
 
+    <style type="text/css">
+    #search {
+      margin-top:2px;
+      margin-left: 10px;
+    }
+    input[type="text"]#search {
+      background-color: #F5F5F5;
+    }
+    </style>
+
     <div class="container">
 	
       <div class="navbar navbar-inverse">
+<<<<<<< HEAD
        <a class="navbar-brand" href="/">Linking Sciences</a>
        <ul class="nav navbar-nav">
         <li><a href="../">Home</a></li>
@@ -25,6 +36,25 @@
        </ul>
       <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
       </div>
+=======
+
+    <a class="navbar-brand" href="/">Linking Sciences</a>
+    <ul class="nav navbar-nav">
+      <li><a href="../">Home</a></li>
+      <li><a  href="../about/">About</a></li>
+      <li><a href="../team/">The Team</a></li>
+    </ul>
+	<form class="navbar-form pull-left" action="">
+		<input type="text" id="search" class="form-control col-lg-8 input-small" placeholder="Search for projects">
+	</form>
+    @if(connected==""){
+    <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
+   }else{
+     <p class="navbar-text pull-right">Signed in as <a href="#" class="navbar-link">@connected</a></p>
+   }
+   </div>
+
+>>>>>>> 4d82ab8c8e44e83f1e25e5e040616432232cb3ea
 
 
 	  <div class="body-content">
@@ -50,7 +80,22 @@
 		 
 		 <div class="col-lg-12">
 		   <dl class="dl-horizontal">
+<<<<<<< HEAD
 		   	@projectDescription
+=======
+		         <dt> Project description:</dt> <dd> In 1962 David Gale (who died in 2008) and Mr Shapley, now 89, published 
+		 a playful paper called �College Admissions and the Stability of Marriage�. They noted the similarity between college admissions,
+		 in which students and universities are trying to pair up to their mutual satisfaction, and the marriage market, in which a fixed number 
+		 of men and women are trying to find a match. In romantic comedies, each man and woman marries their own true love. In real life, some people settle for 
+		 second-best, which can lead to lots of trouble. If John and Mary love each other but are married to other people, they will be tempted to leave their current partner 
+		 and marry each other. 
+		 But if John loves Mary, while Mary loves her husband more than John, both will stay put.</dd> 
+		 <p></p>
+		 
+		        <dt>Additional materials:</dt> <dd> <iframe width="420" height="345"
+                 src="http://www.youtube.com/embed/XGSy3_Czz8k"></iframe> </dd>
+		 
+>>>>>>> 4d82ab8c8e44e83f1e25e5e040616432232cb3ea
 		   </dl>
 		 </div>
   
