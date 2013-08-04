@@ -29,7 +29,8 @@ GET 	/team/				controllers.Application.team()
 
 # Create Project page
 
-GET 	/project/				controllers.Application.project()
+GET 	/project/				controllers.Application.project(id = "")
+GET 	/project/:id				controllers.Application.project(id : String)
 
 
 # Map static resources from the /public folder to the /assets URL path
