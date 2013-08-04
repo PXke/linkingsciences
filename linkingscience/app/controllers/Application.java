@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.security.SecureRandom;
+import java.math.BigInteger;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.db.DB;
@@ -19,12 +20,13 @@ import views.html.signIn;
 import views.html.team;
 import views.html.testspage;
 import views.html.user;
+import utils.*;
 
 
 public class Application extends Controller {
   
 	private static Connection ds = DB.getConnection();
-	
+
     public static Result index() {
     	ResultSet rs=null;
     	String Nbuser ="APOCALYPSE";
@@ -83,10 +85,16 @@ public class Application extends Controller {
      		 {
      			return ok(register.render("already used"));
      		 }
-        	 } catch (SQLException e) {
-        		 e.printStackTrace();
-        	 }
+        	 
         	 name = requestData.get("email");
+        	 
+        	 query = "SELECT COUNT(*) FROM users WHERE email='"+name+"';" ;
+     		 rs = stmt.executeQuery(query) ;
+     		 rs.next();
+     		 if(Integer.parseInt(rs.getString(1))>0)
+     		 {
+     			return ok(register.render("already used"));
+     		 }
         	 if((name.compareTo("")==0)||(name.compareTo("email")==0))
         	 {
         		 return ok(register.render("email missing"));
@@ -98,17 +106,35 @@ public class Application extends Controller {
         	 name = requestData.get("password");
         	 String nameb = requestData.get("verifpassword");
         	 
+        	
         	 if(name.length()<7)
         	 {
         		 return ok(register.render("email incorrect must be 8 characters or more"));
         	 }
         	 
-        	 if(name!=nameb)
+        	
+        	 if(name.compareTo(nameb)!=0)
         	 {
         		 return ok(register.render("the two passwords don't match"));
         	 }
         	 
-        	 return  ok(register.render("Tout est okay"));
+        	 
+        	 SessionIdentifierGenerator MyUIDGene = new SessionIdentifierGenerator();
+        	 String myUID = MyUIDGene.nextSessionId();
+        	
+        	 query = "INSERT INTO users (uid,email,pass,register_date,language,active) VALUES ('"+  myUID + "','"+requestData.get("email") + "','"+ requestData.get("password")+ "', NOW(),'EN','1';" ;
+        	 System.out.println(query);
+        	 stmt.executeUpdate(query) ;
+        	 System.out.println("yay");
+        	 query = "INSERT INTO users_profile (uid,username,usertag) VALUES ('"+  myUID + "','"+requestData.get("username") + "','"+myUID.substring(0, 7)+"');";
+        	 stmt.executeUpdate(query) ;
+        	 query = "INSERT INTO  users_profile_data (uid) VALUES ('"+  myUID + "');" ;
+        	 stmt.executeUpdate(query) ;
+        	 return  ok(register.render("Succces ! You can now log in !!"));
+        	 } catch (SQLException e) {
+        		 e.printStackTrace();
+        	 }
+        	 return  ok(register.render("SQL CHAOS"));
         }
         else if(name.contains("formb"))
         {
