@@ -1,82 +1,84 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Linking Science!</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-        <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
-    </head>
-    <body>
+  <head>
+    <title>Linking Science!</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+  </head>
+  <body>
 
-    <div class="container">
+  <div class="container">
     
     <div class="navbar navbar-inverse">
-    <a class="navbar-brand" href="/">Linking Science</a>
-    <ul class="nav navbar-nav">
-      <li><a href="../">Home</a></li>
-      <li><a href="../about">About</a></li>
-      <li><a href="../team/">The Team</a></li>
-    </ul>
-    <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
-   </div>
+      <a class="navbar-brand" href="/">Linking Science</a>
+      <ul class="nav navbar-nav">
+        <li><a href="../">Home</a></li>
+        <li><a href="../about">About</a></li>
+        <li><a href="../team/">The Team</a></li>
+      </ul>
+      <button type="button" class="btn btn-default navbar-btn pull-right"><a class="navbar-link" href="../sign-in/">Sign in</a></button>
+    </div>
    
-   <div class="jumbotron">
-   
-  
-        <div class="row">
-          <div class="col-lg-6">
-          	<div class="panel">
-          	<form method="post" id="login">
-            <h2>Login</h2>
-          
-  
-            <div class="input-group">
-  				<span class="input-group-addon">@@</span>
-  				<input type="text" class="form-control" placeholder="@Messages("username")" name="username" >
-			</div>
-			<div class="input-group">
-  				<span class="input-group-addon">Password</span>
-  				<input type="password" class="form-control" placeholder="@Messages("password")" name="password" >
-			</div>
-			
-			<input type="submit" value="@Messages("send")" />
-			</form>
-          </div>
-  </div>
-          <div class="col-lg-6">
-           	<div class="panel">
-          	<form method="post" id="register">
-            <h2>Register</h2>
-          
-  			 <div class="input-group">
-  				<span class="input-group-addon">username</span>
-  				<input type="text" class="form-control" value="" placeholder="@Messages("username")" name="username" >
-			</div>
-            <div class="input-group">
-  				<span class="input-group-addon">e-mail</span>
-  				<input type="text" class="form-control" value="" placeholder="@Messages("email")" name="email" >
-			</div>
-			<div class="input-group">
-  				<span class="input-group-addon">Password</span>
-  				<input type="password" class="form-control" placeholder="@Messages("password")" name="password" >
-			</div>
-			<div class="input-group">
-  				<span class="input-group-addon">Verif-pass</span>
-  				<input type="password" class="form-control" placeholder="@Messages("verifpassword")" name="verifpassword" >
-			</div>
-			
-			<input type="submit" value="@Messages("send")" />
-			</form>
-          </div>
-          </div>
+  <div class="jumbotron">
      
-   </div>
-   
- </div>
+    <div class="row">
+
+      <div class="col-lg-6">
+      	<div class="panel">
+        	<form method="post" id="login">
+            
+            <h2>Login</h2>
+
+            <div class="input-group">
+      				<span class="input-group-addon">@@</span>
+      				<input type="text" class="form-control" placeholder="@Messages("username")" name="username" >
+      			</div>
+      			<div class="input-group">
+      				<span class="input-group-addon">Password</span>
+      				<input type="password" class="form-control" placeholder="@Messages("password")" name="password" >
+      			</div>
+      			<input type="submit" value="@Messages("Login")" />
+
+        	</form>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="panel">
+        	<form method="post" id="register">
+
+            <h2>Register</h2>
+
+        		<div class="input-group">
+      				<span class="input-group-addon">Username</span>
+      				<input type="text" class="form-control" value="" placeholder="@Messages("username")" name="username" >
+      			</div>
+            <div class="input-group">
+      				<span class="input-group-addon">Email</span>
+      				<input type="text" class="form-control" value="" placeholder="@Messages("you@example.com")" name="email" >
+      			</div>
+      			<div class="input-group">
+      				<span class="input-group-addon">Password</span>
+      				<input type="password" class="form-control" placeholder="@Messages("password")" name="password" >
+      			</div>
+      			<div class="input-group">
+      				<span class="input-group-addon">Password</span>
+      				<input type="password" class="form-control" placeholder="@Messages("repeat password")" name="verifpassword" >
+        		</div>
+        		<input type="submit" value="@Messages("Register")" />
+
+      		</form>
+        </div>
+      </div>
+         
+    </div>
+       
+  </div>
 
   </body>
 </html>
