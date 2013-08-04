@@ -194,7 +194,41 @@ public class Application extends Controller {
 	}
 
 	public static Result user() {
-		return ok(user.render(isItConnected(), 5, "qms@kth.se"));
+		
+		String uid = session("uid");
+
+		if (uid != null) {
+			try {
+				ResultSet rs = null;
+				Statement stmt =ds.createStatement();
+				String query = "SELECT  * FROM users_profile,users,users_profile_data WHERE users_profile.uid ='"
+						+ uid + "' and users.uid ='"
+						+ uid + "' and users_profile_data.uid ='"
+						+ uid + "';";
+
+				rs = stmt.executeQuery(query);
+
+				rs.next();
+				int experiencestonextlevel = 250;
+				int experiences = rs.getInt("experience");
+				int level = 0;
+				while(experiences-experiencestonextlevel>0)
+				{
+					   level++;
+					   experiences -= experiencestonextlevel;
+					   experiencestonextlevel = (int) (experiencestonextlevel * 1.5); 
+				}
+		
+				return ok(user.render(isItConnected(), experiences, level, (int) experiences/experiencestonextlevel*100 ,rs.getString("email")));
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+
+			e.printStackTrace();
+			return index();
+		}
+	}
+		return signIn();
 	}
 
 	public static Result signIn() {

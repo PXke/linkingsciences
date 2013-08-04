@@ -1,4 +1,4 @@
-@(connected : String, experience: Int, email: String)
+@(connected : String, experience: Int, level: Int, progress : Int, email: String)
 
 <!DOCTYPE html>
 
@@ -74,9 +74,9 @@
 	   </div>
 	   </div>
 	   <div class="col-lg-4"> <div class="container pull-right">
-	   <h3>You are level @experience</h3>
+	   <h3>You are level @level with @experience points</h3>
 	   <div class="progress">
-	   <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+	   <div class="progress-bar progress-bar-success" style="width: @progress %"></div>
 	   </div>
 	   
 	   <h3>You have 3 badges</h3>
