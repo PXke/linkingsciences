@@ -26,6 +26,9 @@
     input[type="text"]#search {
       background-color: #F5F5F5;
     }
+    .caption h3 {
+      margin-top: 9px;
+    }
     </style>
 
  <div class="container">
@@ -56,25 +59,86 @@
 
       <div class="body-content">
 
-        <!-- Example row of columns -->
+        <div class="page-header">
+          <h2>Featured projects</h2>
+        </div>
+
         <div class="row">
-          <div class="col-lg-4">
-            <h2>Featured Project 1!</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-         </div>
-          <div class="col-lg-4">
-            <h2>Featured Project 2!</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-            <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+          <div class="col-lg-3">
+            <div class="thumbnail">
+              <img src="@routes.Assets.at("images/test1.jpg")" alt="">
+              <div class="caption">
+                <h3>Project name</h3>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a href="#" class="btn btn-default">View details »</a>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-3">
+            <div class="thumbnail">
+              <img src="@routes.Assets.at("images/test1.jpg")" alt="">
+              <div class="caption">
+                <h3>Project name</h3>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a href="#" class="btn btn-default">View details »</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="thumbnail">
+              <img src="@routes.Assets.at("images/test1.jpg")" alt="">
+              <div class="caption">
+                <h3>Project name</h3>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a href="#" class="btn btn-default">View details »</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2">
             <h2>Statistics</h2>
             <p>There is @NbUser users <br/>
             There is @NbProject projects </p>
             <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
           </div>
         </div>
+
+
+        <div class="page-header">
+          <h2>Popular projects</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="thumbnail">
+              <img src="@routes.Assets.at("images/test1.jpg")" alt="">
+              <div class="caption">
+                <h3>Project name</h3>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a href="#" class="btn btn-default">View details »</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="thumbnail">
+              <img src="@routes.Assets.at("images/test1.jpg")" alt="">
+              <div class="caption">
+                <h3>Project name</h3>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a href="#" class="btn btn-default">View details »</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="thumbnail">
+              <img src="@routes.Assets.at("images/test1.jpg")" alt="">
+              <div class="caption">
+                <h3>Project name</h3>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a href="#" class="btn btn-default">View details »</a>
+              </div>
+            </div>
+          </div>
 
       </div><!-- /.body-content -->
 
